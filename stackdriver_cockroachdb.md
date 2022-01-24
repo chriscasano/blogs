@@ -77,12 +77,12 @@ Active: active (running) since Mon 2022-01-24 18:41:59 UTC; 2min 44s ago
 If you would like to automate the setup using roachprod, the following script should set this us for your entire cluster.
 
 ```
-roachprod run chrisc-ihg-gce -- curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh
-roachprod run chrisc-ihg-gce -- sudo bash add-logging-agent-repo.sh --also-install
-roachprod put chrisc-ihg-gce -- cockroachdb.conf cockroachdb.conf
-roachprod run chrisc-ihg-gce -- sudo cp cockroachdb.conf /etc/google-fluentd/config.d/cockroachdb.conf
-roachprod run chrisc-ihg-gce -- sudo service google-fluentd force-reload
-roachprod run chrisc-ihg-gce -- sudo service google-fluentd status
+roachprod run chrisc-test -- curl -sSO https://dl.google.com/cloudagents/add-logging-agent-repo.sh
+roachprod run chrisc-test -- sudo bash add-logging-agent-repo.sh --also-install
+roachprod put chrisc-test -- cockroachdb.conf cockroachdb.conf
+roachprod run chrisc-test -- sudo cp cockroachdb.conf /etc/google-fluentd/config.d/cockroachdb.conf
+roachprod run chrisc-test -- sudo service google-fluentd force-reload
+roachprod run chrisc-test -- sudo service google-fluentd status
 ```
 
 #### Miscellaneous Materials
